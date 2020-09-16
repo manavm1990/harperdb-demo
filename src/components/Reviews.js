@@ -13,7 +13,7 @@ export const Reviews = ({ type = "books" }) => {
       operation: "sql",
       sql: `select * from reviews.${type}`,
     },
-    interval: 50000,
+    interval: process.env.REACT_APP_INTERVAL,
   })
 
   if (loading) {
