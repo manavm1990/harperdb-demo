@@ -8,7 +8,7 @@ import { StarRatings } from "./StarRatings"
 import "./Reviews.css"
 
 export const Reviews = ({ type = "books" }) => {
-  const [data, loading, error, refresh] = useHarperDB({
+  const [data, loading, error] = useHarperDB({
     query: {
       operation: "sql",
       sql: `select * from reviews.${type}`,
@@ -43,7 +43,6 @@ export const Reviews = ({ type = "books" }) => {
             ))}
           </tbody>
         </table>
-        <button onClick={refresh}>Refresh</button>
       </>
     )
   }
